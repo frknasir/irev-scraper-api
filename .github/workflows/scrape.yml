@@ -1,0 +1,44 @@
+name: Scrape an election
+
+on: 
+  workflow_dispatch:
+    inputs:
+      election_type:
+        description: 'Election Type (presidential, governorship, senatorial, house-of-reps, house-of-assembly): '
+        required: true
+        type: string
+      year:
+        description: 'Year: '
+        required: true
+        type: string
+      election_id:
+        description: 'Election ID: '
+        required: true
+        type: string
+      googlesheets:
+        description: 'Googlesheets(Only Yes is accepted): '
+        required: true
+        type: string
+      sheet_id:
+        description: 'SHEET ID: '
+        required: true
+        type: string
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install NPM Dependencies
+        run: npm install
+      - name: Run
+        env:
+          FORCE_COLOR: 3
+          ELECTION_TYPE: ${{ inputs.election_type }}
+          YEAR: ${{ inputs.year }}
+          ELECTION_ID: ${{ inputs.election_id }}
+          GOOGLESHEETS: ${{ inputs.googlesheets }}
+          SHEET_ID: ${{ inputs.sheet_id }}
+        run: |
+          npx zx ./index.mjs

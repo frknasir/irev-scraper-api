@@ -1,0 +1,31 @@
+{
+  "name": "irev-api-scraper",
+  "version": "1.0.0",
+  "description": "IREV API Scraper",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dataphyte-africa/irev-api-scraper.git"
+  },
+  "keywords": [
+    "irev",
+    "api",
+    "scraper",
+    "nigeria",
+    "elections"
+  ],
+  "author": "Faruk Nasir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dataphyte-africa/irev-api-scraper/issues"
+  },
+  "homepage": "https://github.com/dataphyte-africa/irev-api-scraper#readme",
+  "dependencies": {
+    "google-auth-library": "^8.7.0",
+    "googleapis": "^113.0.0",
+    "zx": "^7.2.1"
+  }
+}
